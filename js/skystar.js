@@ -66,7 +66,8 @@ var words=[
     '沉鱼落雁鸟惊喧',
     '羞花闭月花愁颤',
     '解释春风无限恨',
-    '沉香亭北倚阑干'
+    '沉香亭北倚阑干',
+    '宝宝'
 ];
 function randomNum(min,max){
     var num = (Math.random()*(max-min+1)+min).toFixed(2);
@@ -88,13 +89,18 @@ function init(){
         word_box.style.setProperty("--margin-left",randomNum(6,35)+'vw');
         word_box.style.setProperty("--animation-duration",randomNum(8,20)+'s');
         word_box.style.setProperty("--animation-delay",randomNum(-20,0)+'s');
-        
+        word_box.addEventListener('click',function(){
+            window.location.href='tree.html';
+        })
         word_box.appendChild(word);
         f.appendChild(word_box);
 
 
     })
     container.appendChild(f);
+}
+function itemClick(item){
+   
 }
 window.addEventListener('load',init);
 let textone = document.querySelector('.textone').querySelector('h1');
